@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="1" name="TagSearch Test">
+    <classes>
+        <class name="GMGOfficialSite.Maven.TagSearchTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+    <test thread-count="1" name="Create Account Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.CreateAccountTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+    <test thread-count="1" name="Home Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.HomeTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test thread-count="1" name="Authors Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.AuthorsTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+    <test thread-count="1" name="Login Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.LoginTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test thread-count="1" name="Topics of Interest  Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.TopicsOfInterestTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test thread-count="1" name="Topics Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.TopicTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
