@@ -69,10 +69,10 @@ public class PadreClassGMG {
 	public void closeWindows() {
 		driver.manage().deleteAllCookies();
 	}
-
-
+/*
+ @AfterTest
 	public void closeWindows1() {
 		driver.close();
-	}
+	}*/
 
 }

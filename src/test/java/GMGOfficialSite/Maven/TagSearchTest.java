@@ -1,5 +1,6 @@
 package GMGOfficialSite.Maven;
 
+import Validations.TagSearchValidations;
 import org.testng.annotations.Test;
 
 import Actions.HomeActions;
@@ -10,6 +11,8 @@ public class TagSearchTest extends PadreClassGMG {
 	
 	HomeActions homeActions = new HomeActions();
 	TagSearchActions tagSearchActions = new TagSearchActions();
+
+	TagSearchValidations tagSearchValidations = new TagSearchValidations();
 	
 	@Test
 	public void tagSearchG() throws InterruptedException {
@@ -17,6 +20,8 @@ public class TagSearchTest extends PadreClassGMG {
 		homeActions.clickOnTagSearchBtn();
 		tagSearchActions.tagSearchFieldSetText();
 		tagSearchActions.clickOnSearchBtn();
+		Thread.sleep(4000);
+		tagSearchValidations.validateTagSearchResult();
 	}
 	
 	@Test
@@ -30,6 +35,7 @@ public class TagSearchTest extends PadreClassGMG {
 		tagSearchActions.clickOnSearchBtn();
 		Thread.sleep(4000);
 		tagSearchActions.clickOnResetBtn();
+		tagSearchValidations.validateTagSearchResult();
 	}
 
 
@@ -42,8 +48,11 @@ public class TagSearchTest extends PadreClassGMG {
 		Thread.sleep(2000);
 		tagSearchActions.clickOnSearchBtn();
 		///Need to be validated that empty field search is working and getting a result
+
 		Thread.sleep(4000);
+		tagSearchValidations.validateTagSearchResult();
 		tagSearchActions.clickOnResetBtn();
+
 	}
 	
 	

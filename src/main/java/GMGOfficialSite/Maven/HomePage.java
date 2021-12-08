@@ -26,6 +26,10 @@ public class HomePage  {
 	By.className("justify-content-right");
 	
 	By FooterAuthors = By.cssSelector("#aboutFooterBody > p:nth-child(4) > a");
+
+	By WelcomeBanner = By.id("welcomeBanner");
+
+	By SearchResult = By.xpath("//*[@id='block-themag-st-content']/div/div/div/div/div/div[1]/div[1]/span/div");
 	
 	public WebElement getGiddyLogo()
 	{
@@ -62,5 +66,11 @@ public class HomePage  {
 	public WebElement getFooterAuthors()
 	{
 		return driver.findElement(FooterAuthors);
+	}
+
+	public WebElement getWelcomeBaner(){return driver.findElement(WelcomeBanner);}
+
+	public WebElement getSearchResult(){
+		return driver.findElement(SearchResult);
 	}
 }

@@ -2,29 +2,43 @@ package GMGOfficialSite.Maven;
 
 
 import Actions.AccountActions;
+import Validations.ArticleValidations;
+import Validations.LoginValidations;
 import org.testng.annotations.Test;
 
 
 import Actions.HomeActions;
 import Actions.LoginActions;
-import Actions.MenuActions;
 
 public class LoginTest extends PadreClassGMG{
 	
 	LoginActions loginActions = new LoginActions();
 	HomeActions homeActions = new HomeActions();
 	AccountActions accountActions = new AccountActions();
-	
+	LoginValidations validationsLogin = new LoginValidations();
+	ArticleValidations articleValidations = new ArticleValidations();
 
 
 	@Test
-	public void loginSuccessful()
-	{
+	public void loginSuccessful() throws InterruptedException {
 		homeActions.clickOnLoginBtn();
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
+		loginActions.clickOnSingInButton();
+		validationsLogin.validWelcomeBanner();
 		loginActions.clickOnLoginBtn();
+
 		accountActions.clickOnSingOut();
+	}
+
+
+	public void loginSuccessful2() {
+		homeActions.clickOnLoginBtn();
+		loginActions.emailSetText();
+		loginActions.passwordSetText();
+		loginActions.clickOnSingInButton();
+		loginActions.clickOnLoginBtn();
+		//accountActions.clickOnSingOut();
 	}
 	
 	@Test
@@ -33,7 +47,8 @@ public class LoginTest extends PadreClassGMG{
 		homeActions.clickOnLoginBtn();
 		loginActions.emailSetTextFaild();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
+		validationsLogin.validateUnrecognizedUsernameOrPassword();
 	}
 
 
@@ -41,7 +56,7 @@ public class LoginTest extends PadreClassGMG{
 	public void loginEmptyFields() 
 	{
 		homeActions.clickOnLoginBtn();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 	}
 
 	@Test
@@ -51,6 +66,14 @@ public class LoginTest extends PadreClassGMG{
 		loginActions.emailSetText();
 		loginActions.clickOnResetPasswordBtn();
 
+	}
+
+@Test
+	public void unlockNowUserAlreadyRegister() throws InterruptedException {
+		homeActions.clickOnCarouselBtn();
+		loginActions.unlockEmailSetText();
+		loginActions.clickOnUnlockBt();
+	    articleValidations.validateEmailAlreadyRegister();
 	}
 	
 

@@ -60,6 +60,22 @@ public class LoginActions {
 			e.printStackTrace();
 		}
 	}
+
+
+
+	public void unlockEmailSetText()
+	{
+		try {
+			WaitManager.waitForElementToBePressent(loginPage.getUnlockNowEmail());
+
+			loginPage.getUnlockNowEmail().clear();
+			loginPage.getUnlockNowEmail().sendKeys("qagiddy1@gmail.com");
+
+		}catch(NoSuchElementException e ){
+
+			e.printStackTrace();
+		}
+	}
 	
 	
 	public void clickOnLoginBtn()
@@ -79,7 +95,13 @@ public class LoginActions {
 	public void clickOnResetPasswordBtn(){
 		WaitManager.waitAndClick(loginPage.getResetPassword());
 	}
-	
+
+	public void clickOnSingInButton(){WaitManager.waitAndClick(loginPage.getSingnIn());}
+
+
+	public void clickOnUnlockBt(){
+		WaitManager.waitAndClick(loginPage.getUnlockNowBtn());
+	}
 	
 	
 

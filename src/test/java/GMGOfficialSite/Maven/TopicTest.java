@@ -2,6 +2,7 @@ package GMGOfficialSite.Maven;
 
 import Actions.*;
 import Models.FooterMenu;
+import Validations.ArticleValidations;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -18,9 +19,11 @@ public class TopicTest extends PadreClassGMG{
 	MenuActions menuActions = new MenuActions();
 	TopicsOfInteresActions topicsOfInteresActions = new TopicsOfInteresActions();
 	AccountActions acccountActions = new AccountActions();
-	TagSearchActions tagSearchActions = new TagSearchActions();
-	AuthorsActions authorsActions = new AuthorsActions();
+
 	WebDriver driver = PadreClassGMG.getDriver();
+
+	ArticleValidations articleValidations = new ArticleValidations();
+
 	
 	@Test
 	public void followTopic() throws InterruptedException 
@@ -30,7 +33,7 @@ public class TopicTest extends PadreClassGMG{
 		Thread.sleep(2000);
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 		Thread.sleep(2000);
 		homeActions.clickOnCarouselBtn();
 		Thread.sleep(2000);
@@ -53,7 +56,7 @@ public class TopicTest extends PadreClassGMG{
 		Thread.sleep(2000);
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 		Thread.sleep(2000);
 		menuActions.clickOnMenuOption(HeaderMenuEnum.MENS_HEALTH.getMenuOption());
 		Thread.sleep(2000);
@@ -77,7 +80,7 @@ public class TopicTest extends PadreClassGMG{
 		Thread.sleep(2000);
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 		Thread.sleep(2000);
 		menuActions.clickOnMenuOption(HeaderMenuEnum.MENS_HEALTH.getMenuOption());
 		Thread.sleep(2000);
@@ -102,7 +105,7 @@ public class TopicTest extends PadreClassGMG{
 		Thread.sleep(2000);
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 		Thread.sleep(2000);
 		homeActions.clickOnCarouselBtn();
 		Thread.sleep(4000);
@@ -126,7 +129,7 @@ public class TopicTest extends PadreClassGMG{
 		Thread.sleep(2000);
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
-		loginActions.clickOnLoginBtn();
+		loginActions.clickOnSingInButton();
 		Thread.sleep(2000);
 		menuActions.clickOnMyAccountBtn();
 		acccountActions.clickOnTopicsOfInterestBtn();
@@ -135,6 +138,15 @@ public class TopicTest extends PadreClassGMG{
 		menuActions.clickOnMyAccountBtn();
 		//Thread.sleep(2000);
 		accountActions.clickOnSingOut();
+	}
+
+
+	@Test
+	public void followTopicButtonIsNotShown() throws InterruptedException
+	{
+		homeActions.clickOnCarouselBtn();
+		articleValidations.validateFollowTopicButtonIsNotDisplayed();
+		articleValidations.validateSaveArticleButtonIsNotDisplayed();
 	}
 
 

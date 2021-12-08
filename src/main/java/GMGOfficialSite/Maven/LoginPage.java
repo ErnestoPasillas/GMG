@@ -13,13 +13,23 @@ public class LoginPage {
 	
 	By Password = By.cssSelector("#edit-pass");
 	
-	By LoginBtn = By.cssSelector("#edit-submit");
+	By LoginBtn = By.cssSelector("#login-text");
 	
 	By CreateAccount = By.xpath("//a[@href='/user/register']");
 
 	By ForgotPassword = By.cssSelector("#user-login-form > p > a");
 
 	By ResetPassword = By.cssSelector("#edit-actions");
+
+	By SingnIn = By.id("edit-submit");
+
+	By ErrorMessage = By.xpath("//div[@role='alert']");
+
+	By UnlockNowEmail = By.id("edit-email");
+
+	By  UnlockNowBtn = By.xpath("//input[@value='Unlock Now']");
+
+
 	
 	
 	public WebElement getLoginField()
@@ -49,5 +59,15 @@ public class LoginPage {
 	public WebElement getResetPassword(){
 		return driver.findElement(ResetPassword);
 	}
-	
+
+	public WebElement getSingnIn(){return driver.findElement(SingnIn);}
+
+	public WebElement getErrorMessage(){ return driver.findElement(ErrorMessage);}
+
+	public WebElement getUnlockNowEmail(){ return driver.findElement(UnlockNowEmail);}
+
+	public WebElement getUnlockNowBtn(){
+		return driver.findElement(UnlockNowBtn);
+	}
+
 }

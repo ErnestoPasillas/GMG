@@ -38,7 +38,7 @@ public class WaitManager {
 		{
 			wait = new  WebDriverWait(PadreClassGMG.getDriver(), 10);
 			
-			wait.until(ExpectedConditions.visibilityOf(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
 			
 			softAssert.assertTrue(element.isDisplayed());
 			element.click();
