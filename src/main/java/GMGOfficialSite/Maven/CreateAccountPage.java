@@ -27,6 +27,8 @@ public class CreateAccountPage {
 	By GoBack = By.xpath("//a[@href='/user/login']");
 	
 	By Continue = By.id("edit-submit");
+
+	By ErrorMessage = By.xpath("//div[@role='alert']");
 	
 	
 	public WebElement getFirtsName()
@@ -74,6 +76,10 @@ public class CreateAccountPage {
 	{
 	
 		return driver.findElement(Continue);
+	}
+
+	public WebElement getErrorMessage(){
+		return driver.findElement(ErrorMessage);
 	}
 	
 

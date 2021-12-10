@@ -19,7 +19,9 @@ public class AuthorsActions {
 	WebDriverWait wait = null;
 	
 	Methods methods = new Methods();
-	
+
+
+
 	public void clickOnFirstAuthorBtn()
 	{
 

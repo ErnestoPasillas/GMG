@@ -45,4 +45,10 @@
         </classes>
     </test> <!-- Test -->
 
+    <test thread-count="1" name="Bare By Giddy  Test">
+        <classes>
+            <class name="GMGOfficialSite.Maven.BareByGiddyTest"/>
+        </classes>
+    </test> <!-- Test -->
+
 </suite> <!-- Suite -->

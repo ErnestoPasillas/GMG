@@ -1,5 +1,6 @@
 package GMGOfficialSite.Maven;
 
+import Validations.CreateAccountValidations;
 import org.testng.annotations.Test;
 
 
@@ -13,7 +14,7 @@ public class CreateAccountTest extends PadreClassGMG{
 	CreateAccountActions  createAccountActions = new CreateAccountActions();
 	HomeActions homeActions = new HomeActions();
 	LoginActions loginActions = new LoginActions();
-	
+	CreateAccountValidations createAccountValidations = new CreateAccountValidations();
 
 	@Test
 	public void createAccountAlreadyUse()
@@ -31,6 +32,7 @@ public class CreateAccountTest extends PadreClassGMG{
 		createAccountActions.clickOnTCPPCheeckbox();
 		createAccountActions.clickOnAdultCheeckbox();
 		createAccountActions.clickOnContinue();
+		createAccountValidations.validateEmailAlreadyRegister();
 	}
 	
 	@Test

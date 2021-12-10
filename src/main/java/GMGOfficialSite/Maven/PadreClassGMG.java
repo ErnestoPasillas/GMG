@@ -1,10 +1,12 @@
 package GMGOfficialSite.Maven;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
@@ -19,18 +21,38 @@ public class PadreClassGMG {
 
 	public static SoftAssert a;
 
+/*
+@Parameters("browser")
+	public PadreClassGMG(String browser) throws Exception {
+		if(browser.equalsIgnoreCase("Firefox")){
+			if(driver == null){
+				System.setProperty("webdriver.gecko.driver", "//Users//user//Downloads//geckodriver 2" );
+				driver = new ChromeDriver();
+			}
+
+		}else if (browser.equalsIgnoreCase("chrome")){
+			if(driver == null){
+				System.setProperty("webdriver.chrome.driver", "//Users//user//Downloads//chromedriver 5" );
+				driver = new ChromeDriver();
+			}
+		}
+		else{
+
+			throw new Exception("Browser is not correct");
+		}
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	}
+*/
+
+
 
 	public PadreClassGMG() 
 	{
 		if(driver == null){
-
 			System.setProperty("webdriver.chrome.driver", "//Users//user//Downloads//chromedriver 5" );
 			driver = new ChromeDriver();
-
 		}
-
-
-
 	}
 	
 	@BeforeTest

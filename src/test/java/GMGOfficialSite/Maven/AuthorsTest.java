@@ -48,6 +48,7 @@ public class AuthorsTest extends PadreClassGMG{
 		//homeActions.clickOnGiddyLogo(); ///Agregar todos los TC para que funcionen con el delete cookies
 		Thread.sleep(2000);
 		homeActions.clickOnCarouselBtn();
+		Thread.sleep(2000);
 		topicActions.clickOnAothorBtn();
 		Thread.sleep(2000);
 		authorsValidations.validateFollowAuthorIsDisplayed();

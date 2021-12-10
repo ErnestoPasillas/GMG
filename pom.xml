@@ -12,12 +12,8 @@
   <!-- FIXME change it to the project's website -->
   <url>https://dev-giddy.pantheonsite.io/</url>
 
-
-
-
 	<profiles>
 		<profile>
-
 			<id>Regression</id>
 			<build>
 				<pluginManagement>

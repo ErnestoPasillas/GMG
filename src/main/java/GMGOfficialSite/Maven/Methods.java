@@ -9,8 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 import io.appium.java_client.functions.ExpectedCondition;
 
 public class Methods extends PadreClassGMG{
- static WebDriver driver = PadreClassGMG.getDriver();
-	 
+
+	static WebDriver driver = PadreClassGMG.getDriver();
+
+
 	public static WebElement accountInfo(String field) {
 		WebElement createAccount = driver
 				.findElement(By.xpath("//label[contains (text(),\"" + field + "\")]/following-sibling::input "));
@@ -120,6 +122,13 @@ public class Methods extends PadreClassGMG{
 	
 	public static void dropdown(String drop2, String state) {
 		WebElement selectTopic = driver.findElement(By.id(drop2));
+
+		Select dropdown2 = new Select(selectTopic);
+		dropdown2.selectByValue(state);
+	}
+
+	public static void dropdown2(String drop2, String state) {
+		WebElement selectTopic = driver.findElement(By.name(drop2));
 
 		Select dropdown2 = new Select(selectTopic);
 		dropdown2.selectByValue(state);

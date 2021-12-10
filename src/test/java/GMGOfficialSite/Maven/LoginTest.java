@@ -20,14 +20,13 @@ public class LoginTest extends PadreClassGMG{
 
 
 	@Test
-	public void loginSuccessful() throws InterruptedException {
+	public void loginSuccessful() {
 		homeActions.clickOnLoginBtn();
 		loginActions.emailSetText();
 		loginActions.passwordSetText();
 		loginActions.clickOnSingInButton();
 		validationsLogin.validWelcomeBanner();
 		loginActions.clickOnLoginBtn();
-
 		accountActions.clickOnSingOut();
 	}
 
@@ -69,7 +68,7 @@ public class LoginTest extends PadreClassGMG{
 	}
 
 @Test
-	public void unlockNowUserAlreadyRegister() throws InterruptedException {
+	public void unlockNowUserAlreadyRegister()  {
 		homeActions.clickOnCarouselBtn();
 		loginActions.unlockEmailSetText();
 		loginActions.clickOnUnlockBt();
